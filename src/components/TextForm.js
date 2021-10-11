@@ -46,12 +46,12 @@ export default function TextForm(props) {
             Enter the text below to analyze
           </label>
 
-          <button onClick={handleOnClick} className={`btn btn-primary my-4 mx-1 ${text.length===0?'disabled':''}`}>
+          <button onClick={handleOnClick} className={`btn btn-primary my-1 mx-1 ${text.length===0?'disabled':''}`}>
             Convert to Uppercase
           </button>
           <button
             onClick={handleOnClickLowercase}
-            className={`btn btn-primary my-4 mx-1 ${text.length===0?'disabled':''}`}
+            className={`btn btn-primary my-1 mx-1 ${text.length===0?'disabled':''}`}
           >
             Convert to Lowercase
           </button>
@@ -66,10 +66,10 @@ export default function TextForm(props) {
       >
         <h3>Your text summary</h3>
         <p>
-          Total Words: {text.split(" ").length} <br /> Total Characters:{" "}
+          Total Words: {text.split(" ").filter((element)=>{return element.length!==0}).length} <br /> Total Characters:{" "}
           {text.length}
         </p>
-        <p>{0.0055 * text.split(" ").length} Minutes Read</p>
+        <p>{text.length===0?0:0.0055 * text.split(" ").length} Minutes Read</p>
       </div>
       
     </>

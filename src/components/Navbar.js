@@ -43,7 +43,7 @@ export default function Navbar(props) {
           </ul>
           <form className="d-flex">
             <input
-              className="form-control me-2"
+              className={`form-control me-2 bg-${props.darkMode==='dark'?'dark':'light'}`}
               type="search"
               placeholder="Search"
               aria-label="Search"

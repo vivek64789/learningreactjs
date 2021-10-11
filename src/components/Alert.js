@@ -6,7 +6,7 @@ export default function Alert(props) {
         return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
   return (
-    props.alert && <div>
+    props.alert && <div className="float-end">
       {/* This is alert box */}
      <div
         className={`alert alert-${props.alert.type} alert-dismissible fade show`}
